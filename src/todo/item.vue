@@ -19,7 +19,9 @@ export default {
     }
   },
   methods: {
-    deteteTodo() {}
+    deleteTodo() {
+      this.$emit("del", this.todo.id);
+    }
   }
 };
 </script>
