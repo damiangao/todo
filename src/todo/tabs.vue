@@ -1,6 +1,6 @@
 <template>
   <div class="helper">
-    <span class="left">{{unFinishedTodoLength}} items left</span>
+    <span class="left">未完成：{{unFinishedTodoLength}}</span>
     <span class="tabs">
       <span 
       v-for="state in states"
@@ -8,10 +8,10 @@
       :class="[state,filter===state?'actived':'']"
       @click="toggleFilter(state)"
       >
-        {{state}}
+        {{Han[state]}}
       </span>
     </span>
-    <span class="clear" @click="clearAllCompleted">Clear Completed</span>
+    <span class="clear" @click="clearAllCompleted">清理</span>
   </div>
 </template>
 
@@ -29,7 +29,12 @@ export default {
   },
   data() {
     return {
-      states: ["all", "active", "completed"]
+      states: ["all", "active", "completed"],
+      Han: {
+        all: "全部",
+        active: "未完成",
+        completed: "已完成"
+      }
     };
   },
   computed: {
