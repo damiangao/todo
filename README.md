@@ -1,3 +1,2 @@
 # todo
- powered by vue
-there is nothing
+a todo-list single page application demo.
